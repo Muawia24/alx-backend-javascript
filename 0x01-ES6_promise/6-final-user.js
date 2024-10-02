@@ -6,7 +6,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     .then((values) => (
       values.map((x) => ({
         status: x.status,
-        value: x.status === 'fulfilled' ? x.value : x.reason,
+        value: x.status === 'fulfilled' ? x.value : String(x.reason),
       }))
     ));
 }
