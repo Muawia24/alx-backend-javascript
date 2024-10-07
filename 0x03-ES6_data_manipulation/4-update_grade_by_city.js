@@ -10,7 +10,7 @@ export default function updateStudentGradeByCity(listObjs, city, newGrades) {
       if (student.id === gradeObj.studentId) {
         student.grade = gradeObj.grade; // eslint-disable-line no-param-reassign
       }
-      if (gradeObj.grade === 'undefined') {
+      if (gradeObj.grade === undefined) {
         student.grade = 'N/A'; // eslint-disable-line no-param-reassign
       }
     }
