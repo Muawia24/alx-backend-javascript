@@ -1,11 +1,11 @@
-const { createServer } = require('node:http');
+const http = require('http');
 const process = require('process');
 const countStudents = require('./3-read_file_async');
 
 const hostname = '127.0.0.1';
 const port = 1245;
 
-const app = createServer(async (req, res) => {
+const app = http.createServer(async (req, res) => {
   if (req.url === '/') {
     res.statusCode = 200;
     res.end('Hello Holberton School!');
