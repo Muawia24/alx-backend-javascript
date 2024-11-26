@@ -11,6 +11,7 @@ async function countStudents(file) {
         reject(Error('Cannot load the database'));
       } else {
         const lines = data.split('\n');
+	      let output = '';
 
         for (let i = 0; i < lines.length; i += 1) {
           if (lines[i]) {
@@ -30,13 +31,15 @@ async function countStudents(file) {
           }
         }
         console.log(`Number of students: ${count - 1}`);
+	output += `Number of students: ${count - 1}\n`;
 
         for (const [key, value] of Object.entries(fields)) {
           if (key !== 'field') {
             console.log(`Number of students in ${key}: ${value}. List: ${students[key].join(', ')}`);
+            output += `Number of students in ${key}: ${value}. List: ${students[key].join(', ')}\n`;
           }
         }
-        resolve(data);
+        resolve(output);
       }
     });
   });
