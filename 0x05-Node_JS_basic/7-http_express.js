@@ -10,11 +10,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', async (req, res) => {
-  res.write('This is the list of our students\n');
   try {
-    await countStudents(process.argv[2]);
+    const studentList = await countStudents(process.argv[2]);
+    res.send(`This is the list of our students\n${studentList.join('\n')}`);
   } catch (err) {
-    res.send(err);
+    res.status(500).send(`Error: ${err.message}`);
   }
 });
 
