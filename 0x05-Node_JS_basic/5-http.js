@@ -13,6 +13,8 @@ const app = createServer(async (req, res) => {
   if (req.url === '/students') {
     try {
       res.statusCode = 200;
+      res.setHeader('Content-Type', 'text/plain');
+
       res.write('This is the list of our students\n');
       const studentList = await countStudents(process.argv[2]);
       res.end(studentList);
