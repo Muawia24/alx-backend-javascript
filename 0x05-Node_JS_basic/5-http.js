@@ -17,7 +17,7 @@ const app = http.createServer(async (req, res) => {
 
       res.write('This is the list of our students\n');
       const studentList = await countStudents(process.argv[2]);
-      res.end(studentList);
+      res.end(studentList.join('\n'));
     } catch (err) {
       res.statusCode = 500;
       res.end(err);
