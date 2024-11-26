@@ -11,7 +11,11 @@ app.get('/', (req, res) => {
 
 app.get('/students', async (req, res) => {
   res.write('This is the list of our students\n');
-  await countStudents(process.argv[2]);
+  try {
+    await countStudents(process.argv[2]);
+  } catch (err) {
+    res.send(err);
+  }
 });
 
 app.listen(port, () => {
