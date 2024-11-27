@@ -19,8 +19,8 @@ const app = http.createServer(async (req, res) => {
       const studentList = await countStudents(process.argv[2]);
       res.end(studentList.join('\n'));
     } catch (err) {
-      res.statusCode = 500;
-      res.end(err);
+      res.statusCode = 404;
+      res.end('Cannot load the database');
     }
   }
 });
