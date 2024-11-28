@@ -26,4 +26,11 @@ describe('calculateNumber', () => {
     assert.strictEqual(calculateNumber(1, '3.7'), 5);
     assert.strictEqual(calculateNumber('1.2', 3.7), 5);
   });
+
+  it('should throw typeerror if either param cannot be coerced to a number', () => {
+    assert.throws(() => calculateNumber('hello'), {
+      name: 'TypeError',
+      message: 'Parameter must be a number!'
+    });
+  });
 });
