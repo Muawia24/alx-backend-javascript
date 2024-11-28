@@ -3,11 +3,11 @@ const calculateNumber = require('./0-calcul');
 
 describe('calculateNumber', () => {
   it('should round 1 and 3 and return the sum of 5', () => {
-    assert.strictEqual(calculateNumber(1, 3), 4);
+    assert.strictEqual(calculateNumber(1.0, 3.0), 4);
   });
 
   it('should round 1 and 3.7 and return the sum of 5', () => {
-    assert.strictEqual(calculateNumber(1, 3.7), 5);
+    assert.strictEqual(calculateNumber(1.0, 3.7), 5);
   });
 
   it('should round 1.2 and 3.7 and return the sum of 5', () => {
