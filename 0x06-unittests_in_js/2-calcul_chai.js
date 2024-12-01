@@ -1,4 +1,4 @@
-function calculateNumber(type, a, b = 0) {
+function calculateNumber(type, a, b) {
   if (isNaN(Number(a)) || isNaN(Number(a))){
     throw new TypeError('Parameter must be a number!');
   }
